@@ -1,0 +1,28 @@
+swap two numbers
+=============
+a=10
+b=11
+a,b=b,a
+print(a,b) # 11,10
+
+reverse string
+=============
+str = "abhi"
+print(str[::-1] #ihba
+
+palindrome
+=========
+N = 'ABHI'
+print(N==N[::-1]) #False
+
+Factorial of NO
+===============
+fact = lambda x:1 if x<=1 else fact(x-1)*x
+fact(5) #120
+
+find even or odd in array
+========================
+l = [1,2,3,4,5]
+even,odd=[x for x in l if x%2==0],[x for x in l if x%2==1]
+print(even,odd)
+
