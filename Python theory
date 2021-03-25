@@ -1,0 +1,138 @@
+1) Diff b/w is and ==
+--> is meant for reference or addree comparison
+-->== meant for content comparison
+ex: l1 = [10,20,30]
+    l2 = [10,20,30]
+    print(l1==l2) #True
+    print(li is l2) #False
+    l1 = l3
+    print(l1 is l3) #True
+    
+2)Exaplain about  ternary operator or conditional operator
+# +X(one argument) --> Unary
+# X + Y(two arguments) --> Binary
+if we are teying two apply for three arguments it is treated as ternary operator
+Syntax: x = first value if  condition else  second value
+ex: max = a if a>b  else b
+biggestValue = a if a>b and a>c  else b if b>c else c (nested of ternary operator)
+
+3)what are the various data types in python?
+Numeric(int, float, complex)     -- In Python, numeric data type represent the data which has numeric value.
+Sequence Type(string,list,tuple) -- In Python, sequence is the ordered collection of similar or different data types.
+Boolean
+Set
+Dictionary
+
+4) explain about mutability and immutability
+
+mutable -- once we creates an object, if we are allowed to change the content that object is said to be mutable objects.
+immutable -- once we creates an object, if we are not allowed to change the content that object is said to be immutable objects.
+
+5)explain the  b/w list and tuple?
+list-- list is a group of comma separated values within  square brackets. list objects are mutable.once we creates list object, we can change its content.
+list objects require more memory. performance of list is low.
+if content is not fixed and keep on changing  then it is recommended to go for list objects(ex : youtube comments)
+tuple -- tuple is a group of comma separated values within  paranthasis. tuple objects are immutable.once we creates list object, we can't change its content.
+tuple objects require less memory. performance of tuple is high.
+if the content is fixed and never changes  then we should go for tuple objects (ex: allowed input values for vendor machine(ATM))
+
+l = [10,20,30]
+t = (10,20,30)
+print(sys.getsizeof(l)) # 136
+print(sys.getsizeof(t)) # 120
+------------------
+6)what is the diff b/w Set and FrozenSet
+All properties are except these diff:
+-- set is muteble where as FrozenSet is immutable 
+-----------
+7) what is diff b/w List and dict?
+list-- list is a group of comma separated values within  square brackets.
+       Duplicate objects are allowed
+       in list we can access objects by using index
+Dict -- dict is a group of comma seperaated key-value pairs within curly braces.
+        Duplicate keys are not allowed, but values can be duplicated
+        in dict, we can access values by using keys 
+ -----------------------
+ 8) diff b/w list and set
+ list-- list is a group of comma separated values within  square brackets.
+        Duplicate objects are allowed
+        insertion order is preserved
+        indexing and slicing concepts are applicable for list
+ set -- list is a group of comma separated values within  curly braces.
+        Duplicate objects are not allowed
+        objets will be inserted based on hash code and henseinsertion order is not preserved
+        indexing and slicing concepts are not applicable for set
+ ---------------------------------------------------------
+ 9)Explain Slice operator?
+ if we want to accecc part(piece or slice) of given sequense, then we should go for slice operator. the sequence can be string or list or tuple etc
+ s[begin:end:step]
+ reverse string use s[::-1]
+ ----------------------------------------------------------
+ ****10) what is the diff b/w *args and **kwargs?
+ *args --> variable length arguments
+ def fun(*args)
+ if a function with *args argument, then we can call that function by passing any nuber of values incljuding zero number.
+ all these values (internally converted into tuples),tuple will be created.
+ ex: def f1(*args):                       def sum(*args):
+         print(args)                              total = 0
+     f1()                                         for x in args:          
+     f1(10)                                              total = total+x
+     f2(10,20)                                    print(total)
+ 
+ 
+ **kwargs ---> Variable length keyword arguments.
+ f1(**kwargs)
+ we cxan call thi function by passing any  number of keyword arguments including zero number and with all these keyword arguments, a dictionary will be created.
+ def f1(**kwargs):
+     print(kwargs)
+ f1(name='Abhi',rollno=100,marks=95)
+ 
+ 11)What is the diff b/w dir() and help() function?
+ dir() function just list out all members of given module.but help function provides documentation related to tha module.
+ dir() --->Without argument, it will list out all members of current module.
+ dir(modulename) --->With arguments, it will list out all members of specified module
+ eg:
+ import math
+ print(dir(math))
+ 
+ import math 
+ help(math
+ complete information if you want to get better to go for help.
+ 
+ --------------------------
+ 12)What is lambda Function or Anonymous Function?
+ Sometimes we can declare a function without any name, such type of nameless functions are called anonymous functions or lambda functions.
+ 
+ The main objective of anonymous function is just for instance use.
+ 
+ normal function
+ def squareit(n):
+     return n*n
+ lambda function
+ lambda n: n*n
+------------------------------------------------
+13) what are diff b/w normal function and lambda function?
+-- It is a named function and we can define by using def keyword.
+-- It is a  nameless(anonymous) function and we can define by using lamda keyword.
+** we have to write return statement explicitly to return some value
+** we are not required to write return statement explicitly to return some value because lambda function internally has returt statement.
+-- if we want to use function multiple time, then we should go for normal functions.
+-- if we want a function just for instant use(ie one time usage), then we should go for lambda function.
+-------------------------------------------------------------------------
+14) explain about filter() functions?
+
+we can use filter() function to filter values from the given sequence based on some condition.
+ex:
+filter(function,sequence)
+where argument function is responsible to perform conditional check and it should be boolean valued function.
+ 
+ for every element in the given sequence, this function will be applied and if it returns True then only the value will be consider in the result.
+ 
+  l1= [0,5,10,15,20,25]
+  l2 = list(filter(lambda x: x%2==0,l1))
+  print(l2) #[0,10,20]
+  -------------------------------------------------------------------
+  decorators
+  reduce()
+ 
+ 
