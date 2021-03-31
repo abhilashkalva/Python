@@ -1,3 +1,12 @@
+import time
+
+t1 = time.clock()
+# statements
+t2 = time.clock()
+print('Time taken:' ,t2-t1)
+
+
+
 1) Diff b/w is and ==
 --> is meant for reference or address comparison
 -->== meant for content comparison
@@ -11,7 +20,7 @@ ex: l1 = [10,20,30]
 2)Exaplain about  ternary operator or conditional operator
 # +X(one argument) --> Unary
 # X + Y(two arguments) --> Binary
-if we are teying two apply for three arguments it is treated as ternary operator
+if we are trying two apply for three arguments it is treated as ternary operator
 Syntax: x = first value if  condition else  second value
 ex: max = a if a>b  else b
 biggestValue = a if a>b and a>c  else b if b>c else c (nested of ternary operator)
@@ -60,11 +69,11 @@ Dict -- dict is a group of comma seperaated key-value pairs within curly braces.
         indexing and slicing concepts are applicable for list
  set -- list is a group of comma separated values within  curly braces.
         Duplicate objects are not allowed
-        objets will be inserted based on hash code and henseinsertion order is not preserved
+        objets will be inserted based on hash code and hense insertion order is not preserved
         indexing and slicing concepts are not applicable for set
  ---------------------------------------------------------
  9)Explain Slice operator?
- if we want to accecc part(piece or slice) of given sequense, then we should go for slice operator. the sequence can be string or list or tuple etc
+ if we want to access part(piece or slice) of given sequense, then we should go for slice operator. the sequence can be string or list or tuple etc
  s[begin:end:step]
  reverse string use s[::-1]
  ----------------------------------------------------------
@@ -82,7 +91,7 @@ Dict -- dict is a group of comma seperaated key-value pairs within curly braces.
  
  **kwargs ---> Variable length keyword arguments.
  f1(**kwargs)
- we cxan call thi function by passing any  number of keyword arguments including zero number and with all these keyword arguments, a dictionary will be created.
+ we can call this function by passing any  number of keyword arguments including zero number and with all these keyword arguments, a dictionary will be created.
  def f1(**kwargs):
      print(kwargs)
  f1(name='Abhi',rollno=100,marks=95)
@@ -134,5 +143,72 @@ where argument function is responsible to perform conditional check and it shoul
   -------------------------------------------------------------------
   decorators
   reduce()
+ -------------------------------------------------------------------
+15)Generator 
+it is responsible to generate a sequence of values. it going to generate values by using  yield keyword.
+
+ex: 
+def mygen():
+    yield 'A'
+    yield 'B'
+    yield 'C'
+g = mygen()
+print(type(g))
+print(next(g)) # A
+print(next(g)) # B
+
+diff list and gen
+-->memory problem
+list is stored all values
+generator-- whenever  we required we get that item automatically
+Ex: list -- store all 60 rice bags in our house
+     gen -- every month 1 rice bag from kirana shop
+     
+ex:2
+l = [x*x for x in range(10000000000000000000000000)]
+print(l)                                                # memory problem
+
+g = (x*x for x in range(10000000000000000000000000))   # tuple comprahention is not there internally it is a generator
+while True:
+    print(next(g))                                      
+print(l)
+
+
+advantage of generators is internally all the required values won't be stored when ever you want a value will be generated.
+the biggest advantage is all the values wont be stored in the memory  with out storing i want to generate this values.
+memory utilization, performance improved
+ex:3 To implement countdown
+import time 
+def countdown(num);
+    print('Count Down starting...')
+    while num>0:
+        yield num
+        num=num-1
+values=countdown(5)
+for x in values:
+    print(x)
+    time.sleep(1)
+    
+ex:4 to generate first n numbers
+def firstn(num):
+    n=1
+    while n<= num:
+        yield n
+        n = n+1
+for x in first(10):
+    print(x)
+-------------------
+ex: 5 fibanacci series
+
+def fib():
+    a,b=0,1
+    while True:
+        yield a
+        a,b= b,a+b
+for n in fib()
+    # if n>100:
+          break
+    print(n)
+    
  
- 
+    
