@@ -1,5 +1,5 @@
 1) Diff b/w is and ==
---> is meant for reference or addree comparison
+--> is meant for reference or address comparison
 -->== meant for content comparison
 ex: l1 = [10,20,30]
     l2 = [10,20,30]
