@@ -5,7 +5,7 @@ t1 = time.clock()
 t2 = time.clock()
 print('Time taken:' ,t2-t1)
 
-
+print('Time taken:' ,t1-t2)
 
 1) Diff b/w is and ==
 --> is meant for reference or address comparison
